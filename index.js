@@ -26,18 +26,13 @@ function mapToSquare(sourceArray) {
 }
 
 //REDUCE
-function reduceToTotal(sourceArray, startingPoint) {
-    if(startingPoint) {
-        sourceArray.forEach(element => startingPoint += element);
-        return startingPoint;
-    }
-    startingPoint = sourceArray[0];
-    sourceArray.slice(1, sourceArray.length).forEach(element => startingPoint += element);
+function reduceToTotal(sourceArray, startingPoint = 0) {
+    sourceArray.forEach(element => startingPoint += element);
     return startingPoint;
 }
 
 function reduceToAllTrue(sourceArray) {
-    let result = sourceArray[0];
+    let result = true
     sourceArray.forEach(element => {
         result = result && element;
     });
@@ -45,7 +40,7 @@ function reduceToAllTrue(sourceArray) {
 }
 
 function reduceToAnyTrue(sourceArray) {
-    let result = sourceArray[0];
+    let result = false
     sourceArray.forEach(element => {
         result = result || element;
     });
