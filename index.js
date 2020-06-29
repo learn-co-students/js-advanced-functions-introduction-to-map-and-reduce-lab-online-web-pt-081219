@@ -1,1 +1,3 @@
-// Your code here
+function map(array, callback) {
+  return callback(array);
+}
